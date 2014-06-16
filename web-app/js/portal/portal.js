@@ -13,6 +13,8 @@ Ext.Updater.defaults.showLoadIndicator = false; // stop loader inside autoLoad'e
 Ext.BLANK_IMAGE_URL = 'img/blank.gif';
 Ext.QuickTips.init();
 
+Ext.Ajax.timeout = 60000;
+
 //--------------------------------------------------------------------------------------------
 Ext.ns('Portal');
 
