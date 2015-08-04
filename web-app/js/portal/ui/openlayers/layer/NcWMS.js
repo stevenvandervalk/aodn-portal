@@ -1,9 +1,4 @@
-/*
- * Copyright 2013 IMOS
- *
- * The AODN/IMOS Portal is distributed under the terms of the GNU General Public License
- *
- */
+
 OpenLayers.Layer.NcWMS = OpenLayers.Class(OpenLayers.Layer.WMS, {
 
     DEFAULT_GIF_HEIGHT: 512,
