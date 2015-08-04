@@ -1,5 +1,3 @@
-
-
 describe("Portal.data.GeoNetworkRecordStore", function() {
 
     describe('load XML in to store', function() {

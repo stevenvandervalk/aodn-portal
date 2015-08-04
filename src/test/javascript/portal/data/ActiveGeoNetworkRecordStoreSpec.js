@@ -1,4 +1,3 @@
-
 describe("Portal.data.ActiveGeoNetworkRecordStore", function() {
 
     /**

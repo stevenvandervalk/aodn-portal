@@ -1,5 +1,3 @@
-
-
 Ext.namespace('Portal.details');
 
 Portal.details.SpatialSubsetControlsPanel = Ext.extend(Ext.Panel, {

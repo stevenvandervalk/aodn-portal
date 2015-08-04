@@ -1,5 +1,3 @@
-
-
 describe("Portal.details.SpatialSubsetControlsPanel", function() {
 
     var spatialSubsetControlsPanel;

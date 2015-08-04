@@ -1,4 +1,3 @@
-
 describe("OpenLayers.Layer.NcWMS", function() {
     var cachedLayer;
     var extent;

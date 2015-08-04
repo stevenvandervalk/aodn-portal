@@ -1,4 +1,3 @@
-
 describe("Portal.data.GeoNetworkRecordFetcher", function() {
 
     var catalogUrl;

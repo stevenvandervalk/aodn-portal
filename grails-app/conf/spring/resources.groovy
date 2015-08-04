@@ -1,5 +1,3 @@
-
-
 import grails.util.Environment
 
 // Place your Spring DSL code here

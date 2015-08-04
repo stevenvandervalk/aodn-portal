@@ -1,5 +1,3 @@
-
-
 describe("Portal.search.data.LinkStore", function() {
 
    describe("Data load", function() {

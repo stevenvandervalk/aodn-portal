@@ -1,4 +1,3 @@
-
 OpenLayers.Layer.NcWMS = OpenLayers.Class(OpenLayers.Layer.WMS, {
 
     DEFAULT_GIF_HEIGHT: 512,

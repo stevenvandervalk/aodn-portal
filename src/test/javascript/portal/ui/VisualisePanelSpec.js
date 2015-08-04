@@ -1,5 +1,3 @@
-
-
 describe('Portal.ui.VisualisePanel', function() {
 
     Portal.app = {

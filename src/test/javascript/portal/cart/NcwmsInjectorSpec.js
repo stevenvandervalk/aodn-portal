@@ -1,5 +1,3 @@
-
-
 describe('Portal.cart.NcwmsInjector', function() {
 
     var injector;

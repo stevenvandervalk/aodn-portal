@@ -1,5 +1,3 @@
-
-
 Ext.namespace('Portal.details');
 
 Portal.details.SubsetPanelAccordion = Ext.extend(Ext.Panel, {

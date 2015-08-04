@@ -1,4 +1,3 @@
-
 describe('Portal.details.NCWMSColourScalePanel', function() {
     describe('makeNcWMSColourScale', function() {
 

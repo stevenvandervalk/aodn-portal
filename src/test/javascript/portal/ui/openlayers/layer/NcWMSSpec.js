@@ -1,4 +1,3 @@
-
 describe('Portal.ui.openlayers.layer.NcWMS', function() {
     describe('getCqlForTemporalExtent', function() {
         it('constructs CQL', function() {

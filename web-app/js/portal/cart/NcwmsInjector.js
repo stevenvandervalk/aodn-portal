@@ -1,5 +1,3 @@
-
-
 Ext.namespace('Portal.cart');
 
 Portal.cart.NcwmsInjector = Ext.extend(Portal.cart.BaseInjector, {

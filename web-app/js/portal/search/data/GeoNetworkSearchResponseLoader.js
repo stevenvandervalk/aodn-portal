@@ -1,5 +1,3 @@
-
-
 Ext.namespace('Portal.ui.search.data');
 
 Portal.ui.search.data.GeoNetworkSearchResponseLoader = Ext.extend(Ext.ux.tree.XmlTreeLoader, {

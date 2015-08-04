@@ -1,5 +1,3 @@
-
-
 Ext.namespace('Portal.details');
 
 Portal.details.NCWMSColourScalePanel = Ext.extend(Ext.Panel, {

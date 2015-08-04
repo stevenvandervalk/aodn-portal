@@ -1,4 +1,3 @@
-
 describe('Portal.data.GeoNetworkRecord', function() {
 
     var record;

@@ -1,4 +1,3 @@
-
 describe("Portal.details.SubsetItemsWrapperPanel", function() {
     var panel;
     var layer;

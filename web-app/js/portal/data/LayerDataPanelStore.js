@@ -1,5 +1,3 @@
-
-
 Ext.namespace('Portal.data');
 
 Portal.data.LayerDataPanelStore = Ext.extend(Ext.data.JsonStore, {

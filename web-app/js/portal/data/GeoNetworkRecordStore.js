@@ -1,5 +1,3 @@
-
-
 Ext.namespace('Portal.data');
 
 Portal.data.GeoNetworkRecordStore = Ext.extend(Ext.data.XmlStore, {
