@@ -21,21 +21,21 @@
 <script src="${resource(dir: 'js/portal/common', file: 'helpers.js')}" type="text/javascript"></script>
 
 
-<g:if env="development">
-    <script src="${resource(dir: 'js/ext-3.3.1/adapter/ext', file: 'ext-base-debug.js')}" type="text/javascript"></script>
-    <script src="${resource(dir: 'js/ext-3.3.1', file: 'ext-all-debug.js')}" type="text/javascript"></script>
-    <script src="${resource(dir: 'js/OpenLayers-2.13.1/lib', file: 'OpenLayers.js')}" type="text/javascript"></script>
-    <script src="${resource(dir: 'js/OpenLayers-2.13.1/lib', file: 'deprecated.js')}" type="text/javascript"></script>
-    <!--- GeoExt (Has to be after Openlayers and ExJS) -->
-    <script src="${resource(dir: 'js/GeoExt1.1/lib', file: 'GeoExt.js')}" type="text/javascript"></script>
-</g:if>
-<g:else>
+<g:if env="production">
     <script src="${resource(dir: 'js/ext-3.3.1/adapter/ext', file: 'ext-base.js')}" type="text/javascript"></script>
     <script src="${resource(dir: 'js/ext-3.3.1', file: 'ext-all.js')}" type="text/javascript"></script>
     <script src="${resource(dir: 'js/OpenLayers-2.13.1', file: 'OpenLayers.js')}" type="text/javascript"></script>
     <script src="${resource(dir: 'js/OpenLayers-2.13.1/lib', file: 'deprecated.js')}" type="text/javascript"></script>
     <!--- GeoExt (Has to be after Openlayers and ExJS) -->
     <script src="${resource(dir: 'js/GeoExt1.1/script', file: 'GeoExt.js')}" type="text/javascript"></script>
+</g:if>
+<g:else>
+    <script src="${resource(dir: 'js/ext-3.3.1/adapter/ext', file: 'ext-base-debug.js')}" type="text/javascript"></script>
+    <script src="${resource(dir: 'js/ext-3.3.1', file: 'ext-all-debug.js')}" type="text/javascript"></script>
+    <script src="${resource(dir: 'js/OpenLayers-2.13.1/lib', file: 'OpenLayers.js')}" type="text/javascript"></script>
+    <script src="${resource(dir: 'js/OpenLayers-2.13.1/lib', file: 'deprecated.js')}" type="text/javascript"></script>
+    <!--- GeoExt (Has to be after Openlayers and ExJS) -->
+    <script src="${resource(dir: 'js/GeoExt1.1/lib', file: 'GeoExt.js')}" type="text/javascript"></script>
 </g:else>
 
 <script src="${resource(dir: 'js/ext-ux/form', file: 'DateTime.js')}" type="text/javascript"></script>
@@ -45,7 +45,10 @@
 <script src="${resource(dir: 'js/ext-ux/tree', file: 'XmlTreeLoader.js')}" type="text/javascript"></script>
 <script src="${resource(dir: 'js/ext-ux/util', file: 'MessageBus.js')}" type="text/javascript"></script>
 
-<g:if env="development">
+<g:if env="production">
+    <script src="${resource(dir: 'js', file: 'portal-all.js')}?v=${resourceVersionNumber}" type="text/javascript"></script>
+</g:if>
+<g:else>
     <script type="text/javascript" src="${resource(dir: 'js/portal/ui/openlayers/control', file: 'SpatialConstraint.js')}"></script>
     <script type="text/javascript" src="${resource(dir: 'js/portal/utils/geo', file: 'GeoUtil.js')}"></script>
     <script type="text/javascript" src="${resource(dir: 'js/portal/utils', file: 'Image.js')}"></script>
@@ -188,7 +191,4 @@
     <script type="text/javascript" src="${resource(dir: 'js/portal/cart', file: 'WfsDownloadHandler.js')}"></script>
     <script type="text/javascript" src="${resource(dir: 'js/portal/visualise/animations', file: 'TemporalExtent.js')}"></script>
     <script type="text/javascript" src="${resource(dir: 'js/portal/visualise/animations', file: 'TemporalExtentParser.js')}"></script>
-</g:if>
-<g:else>
-    <script src="${resource(dir: 'js', file: 'portal-all.js')}?v=${resourceVersionNumber}" type="text/javascript"></script>
 </g:else>

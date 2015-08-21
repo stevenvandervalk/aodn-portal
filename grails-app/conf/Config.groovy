@@ -126,32 +126,15 @@ enabledFacets = [
 // Google Analytics
 googleAnalytics.trackingId = null
 
-environments {
 
-    development {
-        grails.config.locations << "file:grails-app/conf/Config.local.groovy"
-        grails.resources.debug = true
+grails.config.locations << "file:grails-app/conf/Config.local.groovy"
+grails.resources.debug = true
 
-        // URLs
-        def localhostAddress = java.net.InetAddress.getLocalHost().getHostAddress()
-        grails.serverURL = "http://${localhostAddress}:8080/$appName"
-        gogoduck.url = "http://${localhostAddress}:8300/go-go-duck"
-        geonetwork.url = "https://catalogue-123.aodn.org.au/geonetwork"
-    }
-
-    test {
-
-        // URLs
-        grails.serverURL = "http://localhost:8080/$appName"
-    }
-
-    production {
-
-        // URLs
-        grails.serverURL = "http://myaodn.example.com"
-        geonetwork.url = "http://catalogue-123.aodn.org.au/geonetwork"
-    }
-}
+// URLs
+def localhostAddress = java.net.InetAddress.getLocalHost().getHostAddress()
+grails.serverURL = "http://${localhostAddress}:8080/$appName"
+gogoduck.url = "http://${localhostAddress}:8300/go-go-duck"
+geonetwork.url = "https://catalogue-123.aodn.org.au/geonetwork"
 
 geonetwork.searchPath = 'xml.search.imos'
 
