@@ -167,10 +167,19 @@ Portal.cart.DownloadPanel = Ext.extend(Ext.Panel, {
 
             Ext.each(handler.getDownloadOptions(), function(downloadOption) {
 
+                var menuItemText = OpenLayers.i18n(downloadOption.textKey);
+                var menuItemId = String.format(
+                    "downloadMenuItem-{0}-{1}",
+                    collection.getUuid(),
+                    menuItemText.replace(/ /g, '_')
+                );
+
                 var newMenuItem = {
-                    text: OpenLayers.i18n(downloadOption.textKey),
+                    id: menuItemId,
+                    href: this._constructDownloadUrl(collection, downloadOption),
+                    text: menuItemText,
                     handler: function() {
-                        this.confirmDownload(collection, this, downloadOption.handler, downloadOption.handlerParams, downloadOption.textKey)
+                        this.confirmDownload(collection, this, downloadOption.handler, downloadOption.handlerParams, downloadOption.textKey);
                     },
                     scope: this
                 };
@@ -178,6 +187,19 @@ Portal.cart.DownloadPanel = Ext.extend(Ext.Panel, {
                 processedValues.menuItems.push(newMenuItem);
             }, this);
         }, this);
+    },
+
+    // TODO: move to Downloader,
+    _constructDownloadUrl: function(collection, downloadOption) {
+        var downloadUrl = downloadOption.handler.call(this, collection, downloadOption.handlerParams);
+        var downloadToken = this.downloader._newDownloadToken();
+        return this.downloader._constructProxyUrl(
+            collection,
+            downloadUrl,
+            downloadToken,
+            downloadOption.handlerParams
+        );
+        //console.log('downloadUrl', downloadUrl);
     },
 
     confirmDownload: function(collection, generateUrlCallbackScope, generateUrlCallback, params, textKey) {

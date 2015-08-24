@@ -11,13 +11,14 @@ class SearchPage extends Page {
 
     static content = {
         searchBodyPanel { $('#searchBodypanel') }
-        searchResultRows { searchBodyPanel.find('.resultsHeaderBackground') }
-        selectButton { n ->
-            searchResultRows[n].find('button')
+        searchResultRows(wait: true) { searchBodyPanel.find('.resultsHeaderBackground') }
+
+        selectButton { uuid ->
+            searchResultRows.find("#fsSearchAddBtn-${uuid}").find('button')
         }
     }
 
-    void selectNthCollection(n) {
-        selectButton(n).click()
+    void selectCollectionWithUuid(uuid) {
+        selectButton(uuid).click()
     }
 }
