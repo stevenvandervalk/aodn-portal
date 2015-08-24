@@ -38,6 +38,9 @@ grails.project.dependency.resolution = {
     // Allow grails commands to be run as usual, see: http://grails.org/doc/latest/guide/conf.html#mavenIntegration
     pom true
     plugins {
+        compile(":functional-test-development:0.9.4") {
+            excludes "hibernate"
+        }
         compile ":simple-captcha:1.0.0"
         test ":code-coverage:1.2.4"
         compile ":csv:0.3.1"

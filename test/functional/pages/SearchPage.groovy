@@ -12,5 +12,12 @@ class SearchPage extends Page {
     static content = {
         searchBodyPanel { $('#searchBodypanel') }
         searchResultRows { searchBodyPanel.find('.resultsHeaderBackground') }
+        selectButton { n ->
+            searchResultRows[n].find('button')
+        }
+    }
+
+    void selectNthCollection(n) {
+        selectButton(n).click()
     }
 }

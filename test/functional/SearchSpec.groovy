@@ -12,4 +12,16 @@ class SearchSpec extends GebReportingSpec {
         then:
         searchResultRows.size() == 10
     }
+
+    def "goes to step 2 on select collection"() {
+        given:
+        to SearchPage
+
+        when:
+        selectNthCollection(1)
+        page SubsetPage
+
+        then:
+        verifyAt()
+    }
 }
