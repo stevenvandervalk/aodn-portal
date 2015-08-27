@@ -11,8 +11,7 @@ class SmokeSpec extends GebReportingSpec {
 
         when:
         selectCollectionWithUuid('4402cb50-e20a-44ee-93e6-4728259250d2')
-        page SubsetPage
-        verifyAt()
+        at SubsetPage
 
         applySpatialSubset([
             northBL: -42.36,
@@ -22,8 +21,7 @@ class SmokeSpec extends GebReportingSpec {
         ])
 
         navigateToDownloadStep()
-        page DownloadPage
-        verifyAt()
+        at DownloadPage
 
         def listOfUrlsFile = new File('listOfUrls.txt')
         new FileOutputStream(listOfUrlsFile) <<  downloadUuidAs('4402cb50-e20a-44ee-93e6-4728259250d2', 'List of URLs')
