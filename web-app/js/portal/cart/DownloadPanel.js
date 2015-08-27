@@ -189,7 +189,6 @@ Portal.cart.DownloadPanel = Ext.extend(Ext.Panel, {
         }, this);
     },
 
-    // TODO: move to Downloader,
     _constructDownloadUrl: function(collection, downloadOption) {
         var downloadUrl = downloadOption.handler.call(this, collection, downloadOption.handlerParams);
         var downloadToken = this.downloader._newDownloadToken();
@@ -199,7 +198,6 @@ Portal.cart.DownloadPanel = Ext.extend(Ext.Panel, {
             downloadToken,
             downloadOption.handlerParams
         );
-        //console.log('downloadUrl', downloadUrl);
     },
 
     confirmDownload: function(collection, generateUrlCallbackScope, generateUrlCallback, params, textKey) {

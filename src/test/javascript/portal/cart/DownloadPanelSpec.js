@@ -203,7 +203,8 @@ describe("Portal.cart.DownloadPanel", function() {
                 testCollection1
             ]);
 
-            spyOn(OpenLayers, 'i18n');
+            spyOn(downloadPanel, '_constructDownloadUrl');
+            spyOn(OpenLayers, 'i18n').andReturn('fake');
 
             downloadPanel.generateBodyContent();
             var processedValues = downloadPanel._applyTemplate.mostRecentCall.args[1];
