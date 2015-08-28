@@ -34,7 +34,7 @@ class SmokeSpec extends GebReportingSpec {
         def downloadFileLabel = "${argoUuid}-${format}"
         def listOfUrlsFile = new File(reportGroupDir, downloadFileLabel)
 
-        listOfUrlsFile.newOutputStream() << downloadUuidAs(argoUuid, format)
+        listOfUrlsFile << downloadUuidAs(argoUuid, format)
 
         then:
         listOfUrlsFile.readLines().size() > 0

@@ -176,8 +176,11 @@ Portal.cart.DownloadPanel = Ext.extend(Ext.Panel, {
 
                 var newMenuItem = {
                     id: menuItemId,
-                    href: String.format("#{0}", this._constructDownloadUrl(collection, downloadOption)),
-                    text: menuItemText,
+                    html: String.format(
+                        "{0}<a style='display: none;' href='{1}' />",  // this is instrumentation for geb
+                        menuItemText,
+                        this._constructDownloadUrl(collection, downloadOption)
+                    ),
                     handler: function() {
                         this.confirmDownload(collection, this, downloadOption.handler, downloadOption.handlerParams, downloadOption.textKey);
                     },

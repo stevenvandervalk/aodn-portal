@@ -15,7 +15,7 @@ class DownloadPage extends Page {
         }
 
         downloadAsLink { uuid, format ->
-            $("#downloadMenuItem-${uuid}-${format.replaceAll(' ', '_')}")
+            $("#downloadMenuItem-${uuid}-${format.replaceAll(' ', '_')}").find('a')
         }
 
         confirmationButton {
@@ -25,8 +25,6 @@ class DownloadPage extends Page {
 
     def downloadUuidAs(uuid, format) {
         downloadAsMenu(uuid).click()
-
-        def href = downloadAsLink(uuid, format).@href.replaceAll('#', '')
         downloadStream(downloadAsLink(uuid, format).@href)
     }
 }
