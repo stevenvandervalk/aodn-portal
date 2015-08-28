@@ -5,6 +5,9 @@ import spock.lang.*
 import pages.*
 
 class SmokeSpec extends GebReportingSpec {
+
+    static def argoUuid = '4402cb50-e20a-44ee-93e6-4728259250d2'
+
     def "smoke test"() {
         given:
         to SearchPage
@@ -12,7 +15,7 @@ class SmokeSpec extends GebReportingSpec {
 
         when:
 
-        selectCollectionWithUuid('4402cb50-e20a-44ee-93e6-4728259250d2')
+        selectCollectionWithUuid(argoUuid)
         at SubsetPage
 
         applySpatialSubset([
@@ -27,8 +30,11 @@ class SmokeSpec extends GebReportingSpec {
         at DownloadPage
         report 'DownloadPage'
 
-        def listOfUrlsFile = new File(getConfig().getReportsDir(), 'listOfUrls.txt')
-        new FileOutputStream(listOfUrlsFile) <<  downloadUuidAs('4402cb50-e20a-44ee-93e6-4728259250d2', 'List of URLs')
+        def format = 'List of URLs'
+        def downloadFileLabel = "${argoUuid}-${format}"
+        def listOfUrlsFile = new File(reportGroupDir, downloadFileLabel)
+
+        listOfUrlsFile.newOutputStream() << downloadUuidAs(argoUuid, format)
 
         then:
         listOfUrlsFile.readLines().size() > 0
