@@ -176,7 +176,7 @@ Portal.cart.DownloadPanel = Ext.extend(Ext.Panel, {
 
                 var newMenuItem = {
                     id: menuItemId,
-                    href: this._constructDownloadUrl(collection, downloadOption),
+                    href: String.format("#{0}", this._constructDownloadUrl(collection, downloadOption)),
                     text: menuItemText,
                     handler: function() {
                         this.confirmDownload(collection, this, downloadOption.handler, downloadOption.handlerParams, downloadOption.textKey);
