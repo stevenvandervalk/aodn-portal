@@ -10,7 +10,7 @@ class SubsetPage extends Page {
     }
 
     static content = {
-        downloadStepLink { $('#viewPortTab2').find('a')}
+        downloadStepLink { $('#viewPortTab2').find('button')}
         spatialSubsetBoundingLineTextField { name ->
             $("input[name=${name}]")
 
